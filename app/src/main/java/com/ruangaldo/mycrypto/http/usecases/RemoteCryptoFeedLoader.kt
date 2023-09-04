@@ -49,9 +49,9 @@ class RemoteCryptoFeedLoader constructor(private val cryptoFeedHttpClient: Crypt
                         }
                     }
                 }
+            }
         }
     }
 }
-
 class InvalidData : Throwable()
 class Connectivity : Throwable()
