@@ -16,11 +16,13 @@ class RemoteCryptoFeedLoader constructor(private val httpClient: CryptoFeedRetro
         httpClient.get().collect { result ->
             if (result is HttpClientResult.Success) {
                 val cryptoFeed = result.data
-                if (cryptoFeed.isEmpty()) {
+                if (!cryptoFeed.isNullOrEmpty()) {
+                    emit(CryptoFeedResult.Success(CryptoFeedItemsMapper.map(cryptoFeed)))
+                } else {
                     emit(CryptoFeedResult.Success(emptyList()))
                 }
             }
-            
+
             if (result is HttpClientResult.Failure) {
                 emit(CryptoFeedResult.Failure(InvalidData()))
             }
