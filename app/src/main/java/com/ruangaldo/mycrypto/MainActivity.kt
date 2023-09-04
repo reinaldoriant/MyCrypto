@@ -108,6 +108,22 @@ fun CryptoFeedScreen(
                 }
             },
             content = {
+                when (cryptoFeedUiState) {
+                    is CryptoFeedUiState.NoCryptoFeed -> {
+                        if (cryptoFeedUiState.failed.isEmpty()) {
+                            Box(
+                                modifier = modifier
+                                    .fillMaxSize()
+                                    .wrapContentSize(Alignment.Center)
+                            ) {
+                                Text(
+                                    "Crypto Feed Empty",
+                                )
+                            }
+                        }
+                    }
+                    else -> {}
+                }
             }
         )
         Box(
