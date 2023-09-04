@@ -68,4 +68,5 @@ dependencies {
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
     implementation(libs.retrofit)
+    implementation(libs.moshi.kotlin)
 }
