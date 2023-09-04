@@ -1,9 +1,10 @@
-package com.ruangaldo.mycrypto.domain
+package com.ruangaldo.mycrypto.http.usecases
 
+import com.ruangaldo.mycrypto.domain.CryptoFeedItemsMapper
+import com.ruangaldo.mycrypto.domain.CryptoFeedLoader
+import com.ruangaldo.mycrypto.domain.CryptoFeedResult
 import com.ruangaldo.mycrypto.http.CryptoFeedHttpClient
 import com.ruangaldo.mycrypto.http.HttpClientResult
-import com.ruangaldo.mycrypto.http.usecases.CryptoFeedLoader
-import com.ruangaldo.mycrypto.http.usecases.CryptoFeedResult
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 

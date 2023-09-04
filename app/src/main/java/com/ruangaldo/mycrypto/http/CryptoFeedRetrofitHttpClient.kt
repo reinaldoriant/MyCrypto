@@ -1,7 +1,7 @@
 package com.ruangaldo.mycrypto.http
 
-import com.ruangaldo.mycrypto.domain.Connectivity
-import com.ruangaldo.mycrypto.domain.InvalidData
+import com.ruangaldo.mycrypto.http.usecases.Connectivity
+import com.ruangaldo.mycrypto.http.usecases.InvalidData
 import java.io.IOException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
