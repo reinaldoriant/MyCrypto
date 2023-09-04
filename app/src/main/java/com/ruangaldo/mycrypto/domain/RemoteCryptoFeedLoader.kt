@@ -2,6 +2,7 @@ package com.ruangaldo.mycrypto.domain
 
 import com.ruangaldo.mycrypto.http.CryptoFeedRetrofitHttpClient
 import com.ruangaldo.mycrypto.http.HttpClientResult
+import com.ruangaldo.mycrypto.http.usecases.CryptoFeedResult
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
