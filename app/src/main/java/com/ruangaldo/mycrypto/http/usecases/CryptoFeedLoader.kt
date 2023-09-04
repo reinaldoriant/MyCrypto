@@ -1,5 +1,6 @@
-package com.ruangaldo.mycrypto.domain
+package com.ruangaldo.mycrypto.http.usecases
 
+import com.ruangaldo.mycrypto.domain.CryptoFeedItem
 import kotlinx.coroutines.flow.Flow
 
 
