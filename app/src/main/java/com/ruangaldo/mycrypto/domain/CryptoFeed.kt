@@ -1,4 +1,4 @@
-package com.ruangaldo.mycrypto
+package com.ruangaldo.mycrypto.domain
 
 /**
  * Written with joy and smile by Ruang Aldo on 04/09/23.
