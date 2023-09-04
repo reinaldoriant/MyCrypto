@@ -1,7 +1,8 @@
 package com.ruangaldo.mycrypto.domain
 
-import com.ruangaldo.mycrypto.http.CryptoFeedRetrofitHttpClient
+import com.ruangaldo.mycrypto.http.CryptoFeedHttpClient
 import com.ruangaldo.mycrypto.http.HttpClientResult
+import com.ruangaldo.mycrypto.http.usecases.CryptoFeedLoader
 import com.ruangaldo.mycrypto.http.usecases.CryptoFeedResult
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -11,9 +12,10 @@ import kotlinx.coroutines.flow.flow
  * Github: https://github.com/reinaldoriant
  */
 
-class RemoteCryptoFeedLoader constructor(private val httpClient: CryptoFeedRetrofitHttpClient) {
-    fun load(): Flow<CryptoFeedResult> = flow {
-        httpClient.get().collect { result ->
+class RemoteCryptoFeedLoader constructor(private val cryptoFeedHttpClient: CryptoFeedHttpClient) :
+    CryptoFeedLoader {
+    override fun load(): Flow<CryptoFeedResult> = flow {
+        cryptoFeedHttpClient.get().collect { result ->
             if (result is HttpClientResult.Success) {
                 val cryptoFeed = result.root.data
                 if (!cryptoFeed.isNullOrEmpty()) {
