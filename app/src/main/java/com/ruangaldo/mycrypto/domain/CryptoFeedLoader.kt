@@ -1,6 +1,5 @@
 package com.ruangaldo.mycrypto.domain
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
@@ -8,6 +7,7 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.ruangaldo.mycrypto.factories.RemoteCryptoFeedLoaderFactory
 import com.ruangaldo.mycrypto.http.usecases.Connectivity
+import com.ruangaldo.mycrypto.http.usecases.InvalidData
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -81,14 +81,21 @@ class CryptoFeedViewModel constructor(
             cryptoFeedLoader.load().collect { result ->
                 if (result is CryptoFeedResult.Failure) {
                     viewModelState.update {
-                        it.copy(
-                            failed = if(result.throwable is Connectivity) {
-                                "Connectivity"
-                            } else {
-                                "Something Went Wrong"
+                        val copy = it.copy(
+                            failed = when (result.throwable) {
+                                is Connectivity -> {
+                                    "Connectivity"
+                                }
+                                is InvalidData -> {
+                                    "Invalid Data"
+                                }
+                                else -> {
+                                    "Something Went Wrong"
+                                }
                             },
                             isLoading = false
                         )
+                        copy
                     }
                 }
             }
