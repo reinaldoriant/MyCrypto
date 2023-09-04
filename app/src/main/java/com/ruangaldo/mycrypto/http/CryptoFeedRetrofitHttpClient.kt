@@ -1,4 +1,4 @@
-package com.ruangaldo.mycrypto
+package com.ruangaldo.mycrypto.http
 
 import com.ruangaldo.mycrypto.domain.Connectivity
 import com.ruangaldo.mycrypto.domain.InvalidData

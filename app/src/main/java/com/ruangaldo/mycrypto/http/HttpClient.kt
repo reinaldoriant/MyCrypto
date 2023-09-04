@@ -1,4 +1,4 @@
-package com.ruangaldo.mycrypto
+package com.ruangaldo.mycrypto.http
 
 import kotlinx.coroutines.flow.Flow
 
