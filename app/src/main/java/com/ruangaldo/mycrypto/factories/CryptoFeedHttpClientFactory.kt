@@ -1,5 +1,6 @@
 package com.ruangaldo.mycrypto.factories
 
+import com.ruangaldo.mycrypto.http.CryptoFeedHttpClient
 import com.ruangaldo.mycrypto.http.CryptoFeedRetrofitHttpClient
 
 /**
