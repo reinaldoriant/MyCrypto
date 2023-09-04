@@ -69,4 +69,7 @@ dependencies {
     debugImplementation(libs.ui.test.manifest)
     implementation(libs.retrofit)
     implementation(libs.moshi.kotlin)
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+    implementation(libs.converter.moshi)
 }
