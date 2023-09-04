@@ -19,8 +19,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.ruangaldo.mycrypto.domain.CryptoFeedUiState
-import com.ruangaldo.mycrypto.domain.CryptoFeedViewModel
+import com.ruangaldo.mycrypto.presentation.CryptoFeedUiState
+import com.ruangaldo.mycrypto.presentation.CryptoFeedViewModel
 import com.ruangaldo.mycrypto.ui.theme.MyCryptoTheme
 
 class MainActivity : ComponentActivity() {
