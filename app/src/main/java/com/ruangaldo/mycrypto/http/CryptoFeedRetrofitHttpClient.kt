@@ -21,14 +21,15 @@ class CryptoFeedRetrofitHttpClient constructor(private val cryptoFeedService: Cr
             emit(HttpClientResult.Success(cryptoFeedService.get()))
         } catch (throwable: Throwable) {
             if (throwable is IOException) {
-                emit(HttpClientResult.Failure(Connectivity()))
+                emit(HttpClientResult.Failure(ConnectivityException()))
             }
 
             if (throwable is HttpException) {
                 if (throwable.code() == 422) {
-                    HttpClientResult.Failure(InvalidData())
+                    emit(HttpClientResult.Failure(InvalidDataException()))
                 }
             }
+            emit(HttpClientResult.Failure(InvalidDataException()))
         }
     }.flowOn(Dispatchers.IO)
 }
