@@ -15,7 +15,7 @@ class RemoteCryptoFeedLoader constructor(private val httpClient: CryptoFeedRetro
     fun load(): Flow<CryptoFeedResult> = flow {
         httpClient.get().collect { result ->
             if (result is HttpClientResult.Success) {
-                val cryptoFeed = result.data
+                val cryptoFeed = result.root.data
                 if (!cryptoFeed.isNullOrEmpty()) {
                     emit(CryptoFeedResult.Success(CryptoFeedItemsMapper.map(cryptoFeed)))
                 } else {
