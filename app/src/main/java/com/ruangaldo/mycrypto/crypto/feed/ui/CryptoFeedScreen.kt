@@ -1,4 +1,4 @@
-package com.ruangaldo.mycrypto.ui
+package com.ruangaldo.mycrypto.crypto.feed.ui
 
 import android.util.Log
 import androidx.compose.foundation.layout.Box
@@ -22,10 +22,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.ruangaldo.mycrypto.presentation.CryptoFeedUiState
-import com.ruangaldo.mycrypto.presentation.CryptoFeedViewModel
-import com.ruangaldo.mycrypto.ui.component.CryptoFeedList
-import com.ruangaldo.mycrypto.ui.theme.Purple40
+import com.ruangaldo.mycrypto.crypto.feed.presentation.CryptoFeedUiState
+import com.ruangaldo.mycrypto.crypto.feed.presentation.CryptoFeedViewModel
+import com.ruangaldo.mycrypto.crypto.feed.ui.component.CryptoFeedList
+import com.ruangaldo.mycrypto.crypto.feed.ui.theme.Purple40
 
 /**
  * Written with joy and smile by Ruang Aldo on 05/09/23.

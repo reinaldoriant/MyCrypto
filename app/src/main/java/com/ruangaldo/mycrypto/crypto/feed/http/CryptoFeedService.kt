@@ -1,4 +1,4 @@
-package com.ruangaldo.mycrypto.http
+package com.ruangaldo.mycrypto.crypto.feed.http
 
 import retrofit2.http.GET
 import retrofit2.http.Query

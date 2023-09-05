@@ -1,6 +1,6 @@
-package com.ruangaldo.mycrypto.domain
+package com.ruangaldo.mycrypto.crypto.feed.domain
 
-import com.ruangaldo.mycrypto.http.RemoteCryptoFeedItem
+import com.ruangaldo.mycrypto.crypto.feed.http.RemoteCryptoFeedItem
 
 /**
  * Written with joy and smile by Ruang Aldo on 04/09/23.

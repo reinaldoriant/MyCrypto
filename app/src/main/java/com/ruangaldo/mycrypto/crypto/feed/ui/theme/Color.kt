@@ -1,4 +1,4 @@
-package com.ruangaldo.mycrypto.ui.theme
+package com.ruangaldo.mycrypto.crypto.feed.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

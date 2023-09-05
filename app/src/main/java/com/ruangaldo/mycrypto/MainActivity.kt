@@ -27,12 +27,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.ruangaldo.mycrypto.presentation.CryptoFeedUiState
-import com.ruangaldo.mycrypto.presentation.CryptoFeedViewModel
-import com.ruangaldo.mycrypto.ui.CryptoFeedRoute
-import com.ruangaldo.mycrypto.ui.component.CryptoFeedList
-import com.ruangaldo.mycrypto.ui.theme.MyCryptoTheme
-import com.ruangaldo.mycrypto.ui.theme.Purple40
+import com.ruangaldo.mycrypto.crypto.feed.presentation.CryptoFeedUiState
+import com.ruangaldo.mycrypto.crypto.feed.presentation.CryptoFeedViewModel
+import com.ruangaldo.mycrypto.crypto.feed.ui.CryptoFeedRoute
+import com.ruangaldo.mycrypto.crypto.feed.ui.component.CryptoFeedList
+import com.ruangaldo.mycrypto.crypto.feed.ui.theme.MyCryptoTheme
+import com.ruangaldo.mycrypto.crypto.feed.ui.theme.Purple40
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

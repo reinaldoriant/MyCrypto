@@ -1,7 +1,7 @@
 package com.ruangaldo.mycrypto.factories
 
-import com.ruangaldo.mycrypto.http.CryptoFeedHttpClient
-import com.ruangaldo.mycrypto.http.CryptoFeedRetrofitHttpClient
+import com.ruangaldo.mycrypto.crypto.feed.http.CryptoFeedHttpClient
+import com.ruangaldo.mycrypto.crypto.feed.http.CryptoFeedRetrofitHttpClient
 
 /**
  * Written with joy and smile by Ruang Aldo on 04/09/23.
