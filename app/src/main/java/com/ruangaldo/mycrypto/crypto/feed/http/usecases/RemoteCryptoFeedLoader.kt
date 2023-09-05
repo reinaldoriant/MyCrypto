@@ -1,4 +1,4 @@
-package com.ruangaldo.mycrypto.http.usecases
+package com.ruangaldo.mycrypto.crypto.feed.http.usecases
 
 import android.util.Log
 import androidx.compose.foundation.layout.Box
@@ -6,14 +6,14 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
-import com.ruangaldo.mycrypto.domain.CryptoFeedItemsMapper
-import com.ruangaldo.mycrypto.domain.CryptoFeedLoader
-import com.ruangaldo.mycrypto.domain.CryptoFeedResult
-import com.ruangaldo.mycrypto.http.ConnectivityException
-import com.ruangaldo.mycrypto.http.CryptoFeedHttpClient
-import com.ruangaldo.mycrypto.http.HttpClientResult
-import com.ruangaldo.mycrypto.http.InvalidDataException
-import com.ruangaldo.mycrypto.presentation.CryptoFeedUiState
+import com.ruangaldo.mycrypto.crypto.feed.domain.CryptoFeedItemsMapper
+import com.ruangaldo.mycrypto.crypto.feed.domain.CryptoFeedLoader
+import com.ruangaldo.mycrypto.crypto.feed.domain.CryptoFeedResult
+import com.ruangaldo.mycrypto.crypto.feed.http.ConnectivityException
+import com.ruangaldo.mycrypto.crypto.feed.http.CryptoFeedHttpClient
+import com.ruangaldo.mycrypto.crypto.feed.http.HttpClientResult
+import com.ruangaldo.mycrypto.crypto.feed.http.InvalidDataException
+import com.ruangaldo.mycrypto.crypto.feed.presentation.CryptoFeedUiState
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 

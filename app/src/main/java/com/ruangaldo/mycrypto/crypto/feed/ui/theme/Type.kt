@@ -1,4 +1,4 @@
-package com.ruangaldo.mycrypto.ui.theme
+package com.ruangaldo.mycrypto.crypto.feed.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

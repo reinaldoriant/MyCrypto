@@ -1,7 +1,7 @@
 package com.ruangaldo.mycrypto.factories
 
-import com.ruangaldo.mycrypto.http.usecases.RemoteCryptoFeedLoader
-import com.ruangaldo.mycrypto.domain.CryptoFeedLoader
+import com.ruangaldo.mycrypto.crypto.feed.http.usecases.RemoteCryptoFeedLoader
+import com.ruangaldo.mycrypto.crypto.feed.domain.CryptoFeedLoader
 
 /**
  * Written with joy and smile by Ruang Aldo on 04/09/23.

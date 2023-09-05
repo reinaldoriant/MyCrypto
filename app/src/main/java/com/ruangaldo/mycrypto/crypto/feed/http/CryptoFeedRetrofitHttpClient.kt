@@ -1,4 +1,4 @@
-package com.ruangaldo.mycrypto.http
+package com.ruangaldo.mycrypto.crypto.feed.http
 
 import java.io.IOException
 import kotlinx.coroutines.Dispatchers

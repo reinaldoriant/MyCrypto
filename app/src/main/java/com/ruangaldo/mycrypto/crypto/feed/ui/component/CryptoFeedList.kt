@@ -1,4 +1,4 @@
-package com.ruangaldo.mycrypto.ui.component
+package com.ruangaldo.mycrypto.crypto.feed.ui.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -24,7 +24,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.ruangaldo.mycrypto.domain.CryptoFeedItem
+import com.ruangaldo.mycrypto.crypto.feed.domain.CryptoFeedItem
 
 /**
  * Written with joy and smile by Ruang Aldo on 05/09/23.

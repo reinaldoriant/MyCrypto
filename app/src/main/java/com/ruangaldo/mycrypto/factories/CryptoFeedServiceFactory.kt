@@ -1,7 +1,7 @@
 package com.ruangaldo.mycrypto.factories
 
 import com.ruangaldo.mycrypto.frameworks.HttpFactory
-import com.ruangaldo.mycrypto.http.CryptoFeedService
+import com.ruangaldo.mycrypto.crypto.feed.http.CryptoFeedService
 
 /**
  * Written with joy and smile by Ruang Aldo on 04/09/23.

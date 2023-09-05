@@ -1,4 +1,4 @@
-package com.ruangaldo.mycrypto.domain
+package com.ruangaldo.mycrypto.crypto.feed.domain
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -6,8 +6,8 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.ruangaldo.mycrypto.factories.RemoteCryptoFeedLoaderFactory
-import com.ruangaldo.mycrypto.http.usecases.Connectivity
-import com.ruangaldo.mycrypto.http.usecases.InvalidData
+import com.ruangaldo.mycrypto.crypto.feed.http.usecases.Connectivity
+import com.ruangaldo.mycrypto.crypto.feed.http.usecases.InvalidData
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
