@@ -1,5 +1,6 @@
 package com.ruangaldo.mycrypto.presentation
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
@@ -84,9 +85,10 @@ class CryptoFeedViewModel constructor(
         loadCryptoFeed()
     }
 
-    private fun loadCryptoFeed() {
+    fun loadCryptoFeed() {
         viewModelScope.launch {
             cryptoFeedLoader.load().collect { result ->
+                Log.d("loadCryptoFeed", "$result")
                 viewModelState.update {
                     when (result) {
                         is CryptoFeedResult.Success -> it.copy(
