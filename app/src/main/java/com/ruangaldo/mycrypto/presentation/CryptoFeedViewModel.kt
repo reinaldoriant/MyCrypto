@@ -11,6 +11,7 @@ import com.ruangaldo.mycrypto.domain.CryptoFeedResult
 import com.ruangaldo.mycrypto.factories.RemoteCryptoFeedLoaderFactory
 import com.ruangaldo.mycrypto.http.usecases.Connectivity
 import com.ruangaldo.mycrypto.http.usecases.InvalidData
+import com.ruangaldo.mycrypto.http.usecases.RemoteCryptoFeedLoader
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.map
@@ -45,10 +46,19 @@ data class CryptoFeedViewModelState(
     val failed: String = ""
 ) {
     fun toCryptoFeedUiState(): CryptoFeedUiState =
-        CryptoFeedUiState.NoCryptoFeed(
-            isLoading = isLoading,
-            failed = failed
-        )
+        if (cryptoFeeds.isEmpty()) {
+            CryptoFeedUiState.NoCryptoFeed(
+                isLoading = isLoading,
+                failed = failed
+            )
+
+        } else {
+            CryptoFeedUiState.HasCryptoFeed(
+                isLoading = isLoading,
+                cryptoFeeds = cryptoFeeds,
+                failed = failed
+            )
+        }
 }
 
 class CryptoFeedViewModel constructor(
@@ -80,7 +90,7 @@ class CryptoFeedViewModel constructor(
                 viewModelState.update {
                     when (result) {
                         is CryptoFeedResult.Success -> it.copy(
-                            cryptoFeeds = emptyList(),
+                            cryptoFeeds = result.cryptoFeedItems,
                             isLoading = false
                         )
 

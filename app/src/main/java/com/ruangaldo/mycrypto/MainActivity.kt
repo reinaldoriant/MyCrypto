@@ -1,6 +1,7 @@
 package com.ruangaldo.mycrypto
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Box
@@ -27,6 +28,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.ruangaldo.mycrypto.presentation.CryptoFeedUiState
 import com.ruangaldo.mycrypto.presentation.CryptoFeedViewModel
+import com.ruangaldo.mycrypto.ui.component.CryptoFeedList
 import com.ruangaldo.mycrypto.ui.theme.MyCryptoTheme
 import com.ruangaldo.mycrypto.ui.theme.Purple40
 
@@ -52,6 +54,8 @@ fun CryptoFeedRoute(
     viewModel: CryptoFeedViewModel = viewModel(factory = CryptoFeedViewModel.FACTORY)
 ) {
     val cryptoFeedUiState by viewModel.cryptoFeedUiState.collectAsStateWithLifecycle()
+
+    Log.d("loadCryptoFeed", "$cryptoFeedUiState")
 
     CryptoFeedScreen(
         cryptoFeedUiState = cryptoFeedUiState
@@ -109,6 +113,13 @@ fun CryptoFeedScreen(
             },
             content = {
                 when (cryptoFeedUiState) {
+                    is CryptoFeedUiState.HasCryptoFeed -> {
+                        CryptoFeedList(
+                            contentModifier = contentModifier,
+                            items = cryptoFeedUiState.cryptoFeeds,
+                        )
+                    }
+
                     is CryptoFeedUiState.NoCryptoFeed -> {
                         if (cryptoFeedUiState.failed.isEmpty()) {
                             Box(
@@ -122,10 +133,9 @@ fun CryptoFeedScreen(
                             }
                         }
                     }
-                    else -> {}
                 }
-            }
-        )
+            })
+
         Box(
             modifier = modifier
                 .padding(it)
@@ -142,13 +152,13 @@ fun CryptoFeedScreen(
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun LoadingContent(
-    pullRefreshState: PullRefreshState,
     loading: Boolean,
-    empty: Any,
-    emptyContent: () -> Unit,
-    content: () -> Unit
+    pullRefreshState: PullRefreshState,
+    empty: Boolean,
+    emptyContent: @Composable () -> Unit,
+    content: @Composable () -> Unit,
 ) {
-    if (empty as Boolean) {
+    if (empty) {
         emptyContent()
     } else {
         Box(
@@ -167,7 +177,11 @@ fun LoadingContent(
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun PullRefresh(loading: Boolean, pullRefreshState: PullRefreshState, modifier: Modifier) {
+fun PullRefresh(
+    loading: Boolean,
+    pullRefreshState: PullRefreshState,
+    modifier: Modifier
+) {
     PullRefreshIndicator(
         refreshing = loading,
         state = pullRefreshState,
