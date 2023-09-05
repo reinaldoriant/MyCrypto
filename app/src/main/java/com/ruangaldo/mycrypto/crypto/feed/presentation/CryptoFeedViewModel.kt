@@ -9,7 +9,7 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.ruangaldo.mycrypto.crypto.feed.domain.CryptoFeedItem
 import com.ruangaldo.mycrypto.crypto.feed.domain.CryptoFeedLoader
 import com.ruangaldo.mycrypto.crypto.feed.domain.CryptoFeedResult
-import com.ruangaldo.mycrypto.factories.RemoteCryptoFeedLoaderFactory
+import com.ruangaldo.mycrypto.main.factories.RemoteCryptoFeedLoaderFactory
 import com.ruangaldo.mycrypto.crypto.feed.http.usecases.Connectivity
 import com.ruangaldo.mycrypto.crypto.feed.http.usecases.InvalidData
 import com.ruangaldo.mycrypto.crypto.feed.http.usecases.RemoteCryptoFeedLoader

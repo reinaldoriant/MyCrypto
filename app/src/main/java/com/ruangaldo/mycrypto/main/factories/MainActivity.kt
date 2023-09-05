@@ -1,4 +1,4 @@
-package com.ruangaldo.mycrypto
+package com.ruangaldo.mycrypto.main.factories
 
 import android.os.Bundle
 import android.util.Log
@@ -31,8 +31,8 @@ import com.ruangaldo.mycrypto.crypto.feed.presentation.CryptoFeedUiState
 import com.ruangaldo.mycrypto.crypto.feed.presentation.CryptoFeedViewModel
 import com.ruangaldo.mycrypto.crypto.feed.ui.CryptoFeedRoute
 import com.ruangaldo.mycrypto.crypto.feed.ui.component.CryptoFeedList
-import com.ruangaldo.mycrypto.crypto.feed.ui.theme.MyCryptoTheme
-import com.ruangaldo.mycrypto.crypto.feed.ui.theme.Purple40
+import com.ruangaldo.mycrypto.theme.MyCryptoTheme
+import com.ruangaldo.mycrypto.theme.Purple40
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

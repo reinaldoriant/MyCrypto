@@ -1,4 +1,4 @@
-package com.ruangaldo.mycrypto.factories
+package com.ruangaldo.mycrypto.main.factories
 
 import com.ruangaldo.mycrypto.crypto.feed.http.usecases.RemoteCryptoFeedLoader
 import com.ruangaldo.mycrypto.crypto.feed.domain.CryptoFeedLoader
