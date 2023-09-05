@@ -5,6 +5,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import com.ruangaldo.mycrypto.crypto.feed.ui.navigation.cryptoGraph
+import com.ruangaldo.mycrypto.crypto.feed.ui.navigation.cryptoGraphRoute
 
 /**
  * Written with joy and smile by Ruang Aldo on 05/09/23.
