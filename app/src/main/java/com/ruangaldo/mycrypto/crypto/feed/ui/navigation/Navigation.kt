@@ -1,4 +1,4 @@
-package com.ruangaldo.mycrypto.main.factories.navigation
+package com.ruangaldo.mycrypto.crypto.feed.ui.navigation
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
