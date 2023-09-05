@@ -10,7 +10,7 @@ import com.ruangaldo.mycrypto.crypto.feed.domain.CryptoFeedLoader
 
 class RemoteCryptoFeedLoaderFactory {
     companion object {
-        fun createRemoteCryptoFeedLoader(): CryptoFeedLoader {
+        fun create(): CryptoFeedLoader {
             return RemoteCryptoFeedLoader(
                 CryptoFeedHttpClientFactory.createCryptoFeedHttpClient()
             )

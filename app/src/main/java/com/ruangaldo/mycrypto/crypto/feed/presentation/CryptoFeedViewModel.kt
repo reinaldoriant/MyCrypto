@@ -6,13 +6,19 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
+import com.ruangaldo.mycrypto.crypto.feed.cache.usecases.LocalCryptoFeedLoader
 import com.ruangaldo.mycrypto.crypto.feed.domain.CryptoFeedItem
 import com.ruangaldo.mycrypto.crypto.feed.domain.CryptoFeedLoader
 import com.ruangaldo.mycrypto.crypto.feed.domain.CryptoFeedResult
-import com.ruangaldo.mycrypto.main.factories.RemoteCryptoFeedLoaderFactory
 import com.ruangaldo.mycrypto.crypto.feed.http.usecases.Connectivity
 import com.ruangaldo.mycrypto.crypto.feed.http.usecases.InvalidData
 import com.ruangaldo.mycrypto.crypto.feed.http.usecases.RemoteCryptoFeedLoader
+import com.ruangaldo.mycrypto.main.factories.CryptoFeedCompositeFactory
+import com.ruangaldo.mycrypto.main.factories.CryptoFeedDecoratorFactory
+import com.ruangaldo.mycrypto.main.factories.CryptoFeedLocalFactory
+import com.ruangaldo.mycrypto.main.factories.LocalCryptoFeedInsertFactory
+import com.ruangaldo.mycrypto.main.factories.LocalCryptoFeedLoaderFactory
+import com.ruangaldo.mycrypto.main.factories.RemoteCryptoFeedLoaderFactory
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.map
@@ -114,7 +120,13 @@ class CryptoFeedViewModel constructor(
         val FACTORY: ViewModelProvider.Factory = viewModelFactory {
             initializer {
                 CryptoFeedViewModel(
-                    RemoteCryptoFeedLoaderFactory.createRemoteCryptoFeedLoader()
+                    CryptoFeedCompositeFactory.createCompositeFactory(
+                        primary = CryptoFeedDecoratorFactory.create(
+                            decorator = RemoteCryptoFeedLoaderFactory.create(),
+                            cache = LocalCryptoFeedInsertFactory.create()
+                        ),
+                        fallback = LocalCryptoFeedLoaderFactory.create()
+                    )
                 )
             }
         }
