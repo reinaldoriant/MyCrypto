@@ -22,6 +22,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.navigation
+import com.ruangaldo.mycrypto.crypto.feed.domain.CryptoFeedItem
 import com.ruangaldo.mycrypto.crypto.feed.presentation.CryptoFeedUiState
 import com.ruangaldo.mycrypto.crypto.feed.presentation.CryptoFeedViewModel
 import com.ruangaldo.mycrypto.crypto.feed.ui.component.CryptoFeedList
@@ -32,9 +36,30 @@ import com.ruangaldo.mycrypto.theme.Purple40
  * Github: https://github.com/reinaldoriant
  */
 
+const val cryptoGraphRoute = "crypto_graph_route"
+const val cryptoFeedRoute = "crypto_feed_route"
+
+fun NavGraphBuilder.cryptoGraph(
+    onCryptoClick: (CryptoFeedItem) -> Unit,
+    nestedGraphs: NavGraphBuilder.() -> Unit
+) {
+    navigation(
+        route = cryptoGraphRoute,
+        startDestination = cryptoFeedRoute
+    ) {
+        composable(
+            route = cryptoFeedRoute
+        ) {
+            CryptoFeedRoute(onNavigateToCryptoDetails = onCryptoClick)
+        }
+        nestedGraphs()
+    }
+}
+
 @Composable
 fun CryptoFeedRoute(
-    viewModel: CryptoFeedViewModel = viewModel(factory = CryptoFeedViewModel.FACTORY)
+    viewModel: CryptoFeedViewModel = viewModel(factory = CryptoFeedViewModel.FACTORY),
+    onNavigateToCryptoDetails: (CryptoFeedItem) -> Unit
 ) {
     val cryptoFeedUiState by viewModel.cryptoFeedUiState.collectAsStateWithLifecycle()
 
