@@ -36,26 +36,6 @@ import com.ruangaldo.mycrypto.theme.Purple40
  * Github: https://github.com/reinaldoriant
  */
 
-const val cryptoGraphRoute = "crypto_graph_route"
-const val cryptoFeedRoute = "crypto_feed_route"
-
-fun NavGraphBuilder.cryptoGraph(
-    onCryptoClick: (CryptoFeedItem) -> Unit,
-    nestedGraphs: NavGraphBuilder.() -> Unit
-) {
-    navigation(
-        route = cryptoGraphRoute,
-        startDestination = cryptoFeedRoute
-    ) {
-        composable(
-            route = cryptoFeedRoute
-        ) {
-            CryptoFeedRoute(onNavigateToCryptoDetails = onCryptoClick)
-        }
-        nestedGraphs()
-    }
-}
-
 @Composable
 fun CryptoFeedRoute(
     viewModel: CryptoFeedViewModel = viewModel(factory = CryptoFeedViewModel.FACTORY),
