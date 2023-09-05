@@ -5,6 +5,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import com.ruangaldo.mycrypto.crypto.feed.ui.cryptoGraph
+import com.ruangaldo.mycrypto.crypto.feed.ui.cryptoGraphRoute
 
 /**
  * Written with joy and smile by Ruang Aldo on 05/09/23.
@@ -15,13 +17,17 @@ import androidx.navigation.compose.rememberNavController
 fun MainAppNavHost(
     modifier: Modifier = Modifier,
     navHostController: NavHostController = rememberNavController(),
-    startDestination: String = ""
+    startDestination: String = cryptoGraphRoute
 ) {
     NavHost(
         navController = navHostController,
         modifier = modifier,
         startDestination = startDestination
     ) {
+        cryptoGraph(
+            onCryptoClick = {}
+        ) {
 
+        }
     }
 }
