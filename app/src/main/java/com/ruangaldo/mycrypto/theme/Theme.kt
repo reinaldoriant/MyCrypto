@@ -1,4 +1,4 @@
-package com.ruangaldo.mycrypto.crypto.feed.ui.theme
+package com.ruangaldo.mycrypto.theme
 
 import android.app.Activity
 import android.os.Build
