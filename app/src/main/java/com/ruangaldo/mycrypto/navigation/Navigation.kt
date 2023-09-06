@@ -1,8 +1,9 @@
-package com.ruangaldo.ui
+package com.ruangaldo.mycrypto.navigation
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
+import com.ruangaldo.mycrypto.navigation.feed.CryptoFeedRoute
 import com.ruangaldo.shared.cryptoFeedRoute
 import com.ruangaldo.shared.cryptoGraphRoute
 

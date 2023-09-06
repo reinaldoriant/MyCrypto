@@ -13,9 +13,6 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.4"
-    }
 
     buildTypes {
         release {
@@ -25,9 +22,6 @@ android {
                 "proguard-rules.pro"
             )
         }
-    }
-    buildFeatures {
-        compose = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -41,21 +35,12 @@ android {
 dependencies {
     implementation(project(":feed_feature:feed_domain"))
     implementation(project(":feed_feature:feed_cache"))
-    implementation(project(":decorator"))
     implementation(project(":shared"))
     implementation(project(":feed_feature:feed_http"))
     implementation(libs.androidx.ktx)
     implementation(libs.lifecycle.runtime.ktx)
-    implementation(libs.activity.compose)
     implementation(platform(libs.compose.bom))
 
-    implementation(libs.ui)
-    implementation(libs.ui.graphics)
-    implementation(libs.ui.tooling)
-    implementation(libs.ui.tooling.preview)
-
-    implementation(libs.material)
-    implementation(libs.material3)
     implementation(libs.com.google.android.material.material)
     implementation(libs.lifecycle.viewmodel.compose)
     implementation(libs.lifecycle.runtime.compose)
@@ -64,10 +49,5 @@ dependencies {
     testImplementation(libs.junit)
     testImplementation(libs.ext.junit)
     testImplementation(libs.espresso.core)
-
-    androidTestImplementation(platform(libs.compose.bom))
-    androidTestImplementation(libs.ui.test.junit4)
-    debugImplementation(libs.ui.tooling)
-    debugImplementation(libs.ui.test.manifest)
     implementation(libs.coil)
 }

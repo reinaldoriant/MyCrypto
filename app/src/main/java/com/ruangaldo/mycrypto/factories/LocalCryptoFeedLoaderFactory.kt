@@ -1,4 +1,4 @@
-package com.ruangaldo.decorator.factories
+package com.ruangaldo.mycrypto.factories
 
 import com.ruangaldo.cache.usecases.LocalCryptoFeedLoader
 import com.ruangaldo.domain.CryptoFeedLoader

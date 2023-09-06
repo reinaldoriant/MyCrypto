@@ -2,23 +2,15 @@ package com.ruangaldo.presentation
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import androidx.lifecycle.viewmodel.initializer
-import androidx.lifecycle.viewmodel.viewModelFactory
-import com.ruangaldo.decorator.factories.CryptoFeedCompositeFactory
-import com.ruangaldo.decorator.factories.CryptoFeedDecoratorFactory
-import com.ruangaldo.decorator.factories.LocalCryptoFeedInsertFactory
-import com.ruangaldo.decorator.factories.LocalCryptoFeedLoaderFactory
-import com.ruangaldo.decorator.factories.RemoteCryptoFeedLoaderFactory
 import com.ruangaldo.domain.CryptoFeedResult
+import com.ruangaldo.http.usecases.InvalidData
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import com.ruangaldo.http.usecases.InvalidData
 
 /**
  * Written with joy and smile by Ruang Aldo on 05/09/23.
@@ -105,22 +97,6 @@ class CryptoFeedViewModel constructor(
                         )
                     }
                 }
-            }
-        }
-    }
-
-    companion object {
-        val FACTORY: ViewModelProvider.Factory = viewModelFactory {
-            initializer {
-                CryptoFeedViewModel(
-                    CryptoFeedCompositeFactory.createCompositeFactory(
-                        primary = CryptoFeedDecoratorFactory.create(
-                            decorator = RemoteCryptoFeedLoaderFactory.create(),
-                            cache = LocalCryptoFeedInsertFactory.create()
-                        ),
-                        fallback = LocalCryptoFeedLoaderFactory.create()
-                    )
-                )
             }
         }
     }

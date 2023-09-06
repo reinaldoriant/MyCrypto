@@ -8,7 +8,6 @@ import androidx.navigation.compose.rememberNavController
 import com.ruangaldo.detail_ui.navigation.cryptoDetailScreen
 import com.ruangaldo.detail_ui.navigation.navigateToCryptoDetails
 import com.ruangaldo.shared.cryptoGraphRoute
-import com.ruangaldo.ui.cryptoGraph
 
 /**
  * Written with joy and smile by Ruang Aldo on 05/09/23.

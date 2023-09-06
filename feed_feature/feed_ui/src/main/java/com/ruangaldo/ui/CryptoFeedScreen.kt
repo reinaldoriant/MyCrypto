@@ -1,6 +1,5 @@
 package com.ruangaldo.ui
 
-import android.util.Log
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -16,37 +15,16 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.ruangaldo.presentation.CryptoFeedUiState
-import com.ruangaldo.presentation.CryptoFeedViewModel
 import com.ruangaldo.ui.component.CryptoFeedList
-import com.ruangaldo.shared.theme.Purple40
 
 /**
  * Written with joy and smile by Ruang Aldo on 05/09/23.
  * Github: https://github.com/reinaldoriant
  */
-
-@Composable
-fun CryptoFeedRoute(
-    viewModel: CryptoFeedViewModel = viewModel(factory = CryptoFeedViewModel.FACTORY),
-    onNavigateToCryptoDetails: (com.ruangaldo.domain.CryptoFeedItem) -> Unit
-) {
-    val cryptoFeedUiState by viewModel.cryptoFeedUiState.collectAsStateWithLifecycle()
-
-    Log.d("loadCryptoFeed", "$cryptoFeedUiState")
-
-    CryptoFeedScreen(
-        cryptoFeedUiState = cryptoFeedUiState,
-        onRefreshCryptoFeed = viewModel::loadCryptoFeed,
-        onNavigateToCryptoDetails = onNavigateToCryptoDetails
-    )
-}
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterialApi::class)
 @Composable

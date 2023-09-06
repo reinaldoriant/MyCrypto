@@ -12,7 +12,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/decorator" />
             <option value="$PROJECT_DIR$/detail_feature" />
             <option value="$PROJECT_DIR$/detail_feature/detail_ui" />
             <option value="$PROJECT_DIR$/feed_feature" />
@@ -20,6 +19,7 @@
             <option value="$PROJECT_DIR$/feed_feature/feed_domain" />
             <option value="$PROJECT_DIR$/feed_feature/feed_http" />
             <option value="$PROJECT_DIR$/feed_feature/feed_presentation" />
+            <option value="$PROJECT_DIR$/feed_feature/feed_ui" />
             <option value="$PROJECT_DIR$/shared" />
           </set>
         </option>

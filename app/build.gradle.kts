@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
 }
 
 android {
@@ -56,8 +57,8 @@ dependencies {
     implementation(project(":feed_feature:feed_domain"))
     implementation(project(":feed_feature:feed_presentation"))
     implementation(project(":detail_feature:detail_ui"))
+    implementation(project(":feed_feature:feed_ui"))
     implementation(project(":shared"))
-    implementation(project(":decorator"))
     implementation(libs.androidx.ktx)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
@@ -79,4 +80,12 @@ dependencies {
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
+    kapt(libs.room.compiler)
+    implementation(libs.room)
+    implementation(libs.retrofit)
+    implementation(libs.moshi.kotlin)
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+    implementation(libs.converter.moshi)
+    implementation(libs.room.runtime)
 }

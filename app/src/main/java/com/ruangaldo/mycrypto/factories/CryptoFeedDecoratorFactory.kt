@@ -1,7 +1,7 @@
-package com.ruangaldo.decorator.factories
+package com.ruangaldo.mycrypto.factories
 
 import com.ruangaldo.cache.usecases.CryptoFeedCache
-import com.ruangaldo.decorator.CryptoFeedCacheDecorator
+import com.ruangaldo.mycrypto.decorator.CryptoFeedCacheDecorator
 import com.ruangaldo.domain.CryptoFeedLoader
 
 /**

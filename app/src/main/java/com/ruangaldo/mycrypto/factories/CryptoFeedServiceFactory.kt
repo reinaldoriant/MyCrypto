@@ -1,4 +1,4 @@
-package com.ruangaldo.decorator.factories
+package com.ruangaldo.mycrypto.factories
 
 import com.ruangaldo.http.CryptoFeedService
 import com.ruangaldo.http.framework.HttpFactory

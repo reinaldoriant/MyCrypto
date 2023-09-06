@@ -1,4 +1,4 @@
-package com.ruangaldo.decorator.composite
+package com.ruangaldo.mycrypto.composite
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first

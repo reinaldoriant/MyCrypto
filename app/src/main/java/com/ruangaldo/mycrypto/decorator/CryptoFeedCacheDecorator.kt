@@ -1,4 +1,4 @@
-package com.ruangaldo.decorator
+package com.ruangaldo.mycrypto.decorator
 
 import com.ruangaldo.cache.usecases.CryptoFeedCache
 import kotlinx.coroutines.flow.Flow

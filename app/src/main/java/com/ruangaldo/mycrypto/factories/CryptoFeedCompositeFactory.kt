@@ -1,6 +1,6 @@
-package com.ruangaldo.decorator.factories
+package com.ruangaldo.mycrypto.factories
 
-import com.ruangaldo.decorator.composite.CompositeCryptoFeedLoader
+import com.ruangaldo.mycrypto.composite.CompositeCryptoFeedLoader
 import com.ruangaldo.domain.CryptoFeedLoader
 
 /**
