@@ -15,3 +15,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "MyCrypto"
 include(":app")
+include(":feed_feature:feed_domain")
+include(":feed_feature:feed_http")
+include(":feed_feature:feed_cache")
+include(":feed_feature:feed_presentation")
+include(":detail_feature:detail_ui")
+include(":feed_feature:feed_ui")
+include(":shared")

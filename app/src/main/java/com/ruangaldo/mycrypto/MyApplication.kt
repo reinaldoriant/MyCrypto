@@ -1,7 +1,7 @@
 package com.ruangaldo.mycrypto
 
 import android.app.Application
-import com.ruangaldo.mycrypto.frameworks.LocalFactory
+import com.ruangaldo.cache.framework.LocalFactory
 
 /**
  * Written with joy and smile by Ruang Aldo on 05/09/23.

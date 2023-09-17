@@ -28,6 +28,8 @@ coil = "2.4.0"
 
 # Local
 room = "2.5.2"
+appcompat = "1.6.1"
+material = "1.9.0"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
@@ -47,6 +49,7 @@ ui-graphics= { group = "androidx.compose.ui", name = "ui-graphics" }
 ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
 material3 = { group = "androidx.compose.material3", name = "material3" }
 material = { group = "androidx.compose.material", name = "material" }
+com-google-android-material-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose" }
 lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose" }
@@ -76,3 +79,4 @@ coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 room = { module = "androidx.room:room-ktx", version.ref = "room" }
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }

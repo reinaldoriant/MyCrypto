@@ -1,3 +1,4 @@
+@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -51,7 +52,13 @@ android {
 }
 
 dependencies {
-
+    implementation(project(":feed_feature:feed_cache"))
+    implementation(project(":feed_feature:feed_http"))
+    implementation(project(":feed_feature:feed_domain"))
+    implementation(project(":feed_feature:feed_presentation"))
+    implementation(project(":detail_feature:detail_ui"))
+    implementation(project(":feed_feature:feed_ui"))
+    implementation(project(":shared"))
     implementation(libs.androidx.ktx)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
@@ -62,6 +69,7 @@ dependencies {
     implementation(libs.ui.tooling.preview)
     implementation(libs.material)
     implementation(libs.material3)
+    implementation(libs.com.google.android.material.material)
     implementation(libs.lifecycle.viewmodel.compose)
     implementation(libs.lifecycle.runtime.compose)
     implementation(libs.navigation.compose)
@@ -72,15 +80,12 @@ dependencies {
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
-
+    kapt(libs.room.compiler)
+    implementation(libs.room)
     implementation(libs.retrofit)
     implementation(libs.moshi.kotlin)
     implementation(libs.okhttp)
     implementation(libs.logging.interceptor)
     implementation(libs.converter.moshi)
-    implementation(libs.coil)
-
-    implementation(libs.room)
-    kapt(libs.room.compiler)
     implementation(libs.room.runtime)
 }
